@@ -1,2 +1,0 @@
-# Hive
-Development of Hive
