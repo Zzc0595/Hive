@@ -12,7 +12,7 @@ std::string Tostr(double d){
 //绝对值函数
 double abs(double m){
     if (m>=0)return m;
-    if (m<0)return -m;
+    else return -m;
 }
 
 //平方根
