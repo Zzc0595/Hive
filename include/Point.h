@@ -1,12 +1,8 @@
-#include <string>
-#include <sstream>
-#include <cmath>
-namespace zm{
-    //绝对值函数
-    double abs(double m){
-        if (m>=0)return m;
-        if (m<0)return -m;}
-    
+#define POINT_H
+#ifndef ZMATH_H
+#include </home/zc/Hive/include/Zmath.h>
+#endif
+namespace zm{  
         class Point{
         private:
         double x;
@@ -15,18 +11,12 @@ namespace zm{
         public:
         //构造函数
         Point(double x_val = 0.0, double y_val = 0.0) : x(x_val), y(y_val) {}        
-        //double to std::string
-        std::string Tostr(double d){
-            std::stringstream ss;
-            ss << d;
-            std::string str1 = ss.str();
-            return str1;
-        }
         //读写坐标
         double get_x() const {return x;}
         double get_y() const {return y;}
         void set_x(double sx){x = sx;}
         void set_y(double sy){y = sy;}
+        //显示坐标
         std::string display(){
             std::string s1 = "(" + Tostr(x) + "," + Tostr(y) + ")";
             return s1;
@@ -59,7 +49,7 @@ namespace zm{
         else{
             double dx= abs(a.get_x()-b.get_x());
             double dy= abs(a.get_y()-b.get_y());
-            return sqrt(dx*dx + dy*dy);}
+            return hypot(dx,dy);}//用到zmath定义的hypot勾股数
     }
 
 }
