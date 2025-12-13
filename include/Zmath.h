@@ -1,4 +1,5 @@
 #define ZMATH_H
+#pragma once
 #include <string>
 #include <sstream>
 namespace zm{

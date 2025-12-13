@@ -1,7 +1,6 @@
 #define POINT_H
-#ifndef ZMATH_H
-#include </home/zc/Hive/include/Zmath.h>
-#endif
+#pragma once
+#include <Zmath.h>
 namespace zm{  
         class Point{
         private:
