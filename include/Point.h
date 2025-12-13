@@ -44,7 +44,7 @@ namespace zm{
 };
     
     //两点距离
-    double dist_pnt(Point a ,Point b){
+    double Dist(Point a ,Point b){
         if (a==b){return 0.0;}
         else{
             double dx= abs(a.get_x()-b.get_x());
