@@ -10,13 +10,13 @@ std::string Tostr(double d){
     std::string str1 = ss.str();
     return str1;
 }
-//绝对值函数
+//function absolute
 double abs(double m){
     if (m>=0)return m;
     else return -m;
 }
 
-//平方根
+//square root
 double sqrt(double x) {
     if (x < 0) return -1;  // 处理负数
     if (x == 0) return 0;
