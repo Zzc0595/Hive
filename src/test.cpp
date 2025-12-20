@@ -3,6 +3,6 @@
 int main (){
     zm::Point A(2.0,3.0);
     zm::Point B(3.0,4.0);
-    std::cout << zm::dist_pnt(A,B) << std::endl;
+    std::cout << zm::Dist(A,B) << std::endl;
     return 0;
 }

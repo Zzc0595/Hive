@@ -10,30 +10,33 @@ class Line{
     public:
         //基本读写操作
         Line(double a = 1.0 , double b = 1.0 , double c = 0.0) : A(a), B(b) ,C(c) {}
-        double get_A()const {return A;}
-        double get_B()const {return B;}
-        double get_C()const {return C;}
-        void set_A(double val) {A=val;}
-        void set_B(double val) {B=val;}
-        void set_C(double val) {C=val;}
+        double getA()const {return A;}
+        double getB()const {return B;}
+        double getC()const {return C;}
+        void setA(double val) {A=val;}
+        void setB(double val) {B=val;}
+        void setC(double val) {C=val;}
 
         //Generate a line by two points
         void TwoPoint(Point a, Point b){
-            set_A(a.get_y()-b.get_y());
-            set_B(b.get_x()-a.get_x());
-            set_C(a.get_x()*b.get_y() - b.get_x()*a.get_y());}
+            setA(a.gety()-b.gety());
+            setB(b.getx()-a.getx());
+            setC(a.getx()*b.gety() - b.getx()*a.gety());}
         
         //斜率
-        double k(){return -A/B;}
+        double k() const {if (B==0) return INFINITY; else return -A/B;}
 
         //Pass a point?
         bool Pass (Point p){
-            if (A*p.get_x() + B*p.get_y() +C ==0) return true;
+            if (A*p.getx() + B*p.gety() +C ==0) return true;
             else return false;
         }
 
         //The distance from a point to the line
-        double Dist(point p)
+        double Dist(Point p){
+            return abs(p.getx()*A +p.gety()*B +C)
+            /hypot(A,B);
+        }
 
         
 };

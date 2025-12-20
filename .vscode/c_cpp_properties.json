@@ -3,8 +3,9 @@
         {
             "name": "Linux",
             "includePath": [
-                "/usr/include/",
-                "/home/zc/Hive/include"
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/include",
+                "${workspaceFolder}/include"
             ],
             "defines": [],
             "cStandard": "c17",
