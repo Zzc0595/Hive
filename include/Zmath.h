@@ -6,7 +6,12 @@
 namespace zm{
 //const pi
 constexpr double PI = 3.14159265358979323846;
-
+//equal?
+static constexpr double EPSILON = 1e-10;  // 容差值
+bool eq (double a, double b) {
+  if (fabs(a - b) < EPSILON) return true;
+  else return false;
+} 
 //double to std::string
 std::string Tostr(double d){
     std::stringstream ss;

@@ -4,8 +4,8 @@
 
 
 namespace zm{
-class Line{
-    private:
+class Line : public Point{
+    protected:
         double A,B,C; //Ax+By+C=0
     public:
         //基本读写操作
@@ -27,8 +27,8 @@ class Line{
         double k() const {if (B==0) return INFINITY; else return -A/B;}
 
         //Pass a point?
-        bool Pass (Point p){
-            if (A*p.getx() + B*p.gety() +C ==0) return true;
+        bool Pass (Point p) const{
+            if (eq(A*p.getx() + B*p.gety() +C,0)) return true;
             else return false;
         }
 
@@ -41,6 +41,6 @@ class Line{
         
 };
 //parallel
-bool paral(Line a,Line b){if (a.k() == b.k() )return true;else return false;}
+bool paral(Line a,Line b){if (eq(a.k(),b.k() ))return true;else return false;}
 
 }

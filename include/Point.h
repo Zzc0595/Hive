@@ -3,9 +3,8 @@
 #include "Zmath.h"
 namespace zm{  
         class Point{
-        private:
-        double x;
-        double y;
+        protected:
+        double x;double y;
 
         public:
         //构造函数
@@ -22,7 +21,7 @@ namespace zm{
         }
         // 运算符重载
         bool operator==(const Point& other) const {
-        return (x == other.x) && (y == other.y);
+        return (eq(x,other.x)) && (eq(y,other.y));
     }  
         bool operator!=(const Point& other) const {
         return !(*this == other);
